@@ -39,6 +39,22 @@
                                  rgb(@start,@start,@start));
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",rgb(@stop,@stop,@stop),rgb(@start,@start,@start)));
 }
+.ltr-gradient(@color: #F5F5F5, @left: #EEE, @right: #FFF) {
+  background-color: @color;
+  background-image: none;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, @left),
+    color-stop(1, @right)
+  );
+  background-image: -o-linear-gradient(right, @right 0%, @left 100%);
+  background-image: -moz-linear-gradient(right, @right 0%, @left 100%);
+  background-image: -webkit-linear-gradient(right, @right 0%, @left 100%);
+  background-image: -ms-linear-gradient(right, @right 0%, @left 100%);
+  background-image: linear-gradient(to right, @left 0%, @right 100%);
+}
 .bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
   border-top: solid 1px @top-color;
   border-left: solid 1px @left-color;
